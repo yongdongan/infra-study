@@ -1,0 +1,29 @@
+# .terraform/ : terraform init 실행 시 자동 생성되는 플러그인 폴더 (용량 크고 재생성 가능)
+# ** 는 모든 하위 폴더에 적용한다는 의미
+
+**/.terraform/
+
+# .tfstate : Terraform이 현재 AWS 상태를 기록하는 파일
+# -> S3에 저장(remote backend)하므로 로컬 파일은 Git에 올리지 않음
+# -> Git에 올리면 민감 정보(IP, ARN 등) 노출 위험
+
+*.tfstate
+*.tfstate.backup
+
+# .terraform.lock.hcl : 플러그인 버전 잠금 파일 (팀 프로젝트에서는 커밋하기도 함)
+.terraform.lock.hcl
+
+# .tfplan : terraform plan -out=plan.tfplan 으로 저장한 실행 계획 파일
+*.tfplan
+
+# .pem / .key : EC2 SSH 키 등 민감 파일 - 절대 Git에 올리면 안 됨
+
+*.pem
+*.key
+
+# secrets.tfvars : 비밀번호, API 키 등을 담은 변수 파일
+secrets.tfvars
+
+# macOS 시스템 파일(불필요)
+.DS_Store
+
