@@ -9,3 +9,10 @@ module "vpc" {
   private_subnets = var.private_subnets
   azs             = var.azs
 }
+
+module "eks" {
+  source = "../../modules/eks"
+  env = var.env
+  private_subnet_ids = module.vpc.private_subnet_ids
+  cluster_version = "1.34"
+}
