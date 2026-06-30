@@ -23,7 +23,7 @@ jobs:
             # role-to-assume: 발급받을 IAM Role ARN (GitHub Secrets에서 읽음)
             # aws-region: 기본 리전 설정
             - name: Configure AWS Credentials
-              uses: aws-actions/configure-aws-credentials@4
+              uses: aws-actions/configure-aws-credentials@v4
               with:
                 role-to-assume: ${{ secrets.AWS_ROLE.ARN }}
                 aws-region: ap-northeast-2
