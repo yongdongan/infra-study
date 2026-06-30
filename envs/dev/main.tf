@@ -11,8 +11,8 @@ module "vpc" {
 }
 
 module "eks" {
-  source = "../../modules/eks"
-  env = var.env
+  source             = "../../modules/eks"
+  env                = var.env
   private_subnet_ids = module.vpc.private_subnet_ids
-  cluster_version = "1.34"
+  cluster_version    = "1.34"
 }
