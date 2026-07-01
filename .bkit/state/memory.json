@@ -1,0 +1,10 @@
+{
+  "sessionCount": 133,
+  "lastSession": {
+    "startedAt": "2026-07-01T01:08:25.803Z",
+    "platform": "claude",
+    "level": "Starter"
+  },
+  "currentFeature": "report-distribution",
+  "currentPhase": "plan"
+}
